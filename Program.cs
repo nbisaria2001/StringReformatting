@@ -44,7 +44,8 @@ namespace FrontlineCodeChallenge_2017
             var start = workingString.IndexOf('(');
             var end = workingString.LastIndexOf(')');
             var subString = workingString.Substring(start + 1, end - start - 1);
-            string[] array = subString.Split(',');
+            var formattedString = " " + subString;
+            string[] array = formattedString.Split(',');
             Array.Sort(array, StringComparer.InvariantCulture);
             var sortedString = string.Join(",", array);
             index = start;
