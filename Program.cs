@@ -8,11 +8,8 @@ namespace FrontlineCodeChallenge_2017
     {   
         public static void Main(string[] args)
         {
-            //var providedString = "(id(idname), created, employee(id, firstname, employeeType(id), lastname), location(id, name, locationType(id)))";
             Console.WriteLine("Please enter the string");
             var providedString = Console.ReadLine();
-            providedString = "(id(idname), created, employee(id, firstname, employeeType(id), lastname), location(id, name, locationType(id)))";
-
             if (providedString == "")
             {
                 Console.WriteLine("Please enter the string");
@@ -181,7 +178,7 @@ namespace FrontlineCodeChallenge_2017
             string[] strArray = str.Split(',');
             for (int i = 0; i < strArray.Length; i++)
             {
-                strArray[i] = createStr.ToString() + strArray[i];
+                strArray[i] = createStr.ToString() +" "+ strArray[i];
             }
             return string.Join(",", strArray);
         }
