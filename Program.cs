@@ -8,11 +8,11 @@ namespace FrontlineCodeChallenge_2017
     {   
         public static void Main(string[] args)
         {
-            Console.WriteLine("Please enter the string");
+            Console.WriteLine("Please enter the input string");
             var providedString = Console.ReadLine();
             if (providedString == "")
             {
-                Console.WriteLine("Please enter the string");
+                Console.WriteLine("Please enter the input string");
                 Console.ReadLine();
                 Environment.Exit(0);
             }
@@ -28,7 +28,11 @@ namespace FrontlineCodeChallenge_2017
             Console.ReadLine();   
         }
 
-        //Parse the input string
+        /// <summary>
+        ///Parse the input string.
+        /// </summary>
+        /// <param name="workingString"></param>
+        /// <returns>string</returns>
         public static string ParseTheGivenString(string workingString)
         {
             StringBuilder inputString = new StringBuilder(workingString);
@@ -98,7 +102,11 @@ namespace FrontlineCodeChallenge_2017
             return CreateArrayOfProperties(collection);
         }
 
-        //create array of properties 
+        /// <summary>
+        /// Create array of properties.
+        /// </summary>
+        /// <param name="stringsCollection"></param>
+        /// <returns>string</returns>
         private static string CreateArrayOfProperties(List<string> stringsCollection)
         {
             int index = 0;
@@ -152,7 +160,13 @@ namespace FrontlineCodeChallenge_2017
             return string.Join(",", finalString.ToArray());
         }
 
-        //find substring
+        /// <summary>
+        /// Finds substring in the provided string.
+        /// </summary>
+        /// <param name="workingString"></param>
+        /// <param name="index"></param>
+        /// <param name="length"></param>
+        /// <returns>string</returns>
         private static string findSubString(string workingString, out int index, out int length)
         {
             var start = workingString.IndexOf('(');
@@ -166,7 +180,12 @@ namespace FrontlineCodeChallenge_2017
             return sortedString;
         }
 
-        //append Hyphen
+        /// <summary>
+        /// Append Hyphens to the string.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="count"></param>
+        /// <returns>string</returns>
         private static string appendHyphen(string str, int count)
         {
             var createString = "";
@@ -183,7 +202,15 @@ namespace FrontlineCodeChallenge_2017
             return string.Join(",", strArray);
         }
 
-        //Replace the old string with the new one
+        /// <summary>
+        /// Replace the old string with the new one.
+        /// </summary>
+        /// <param name="providedString"></param>
+        /// <param name="subString"></param>
+        /// <param name="index"></param>
+        /// <param name="length"></param>
+        /// <param name="count"></param>
+        /// <returns>string</returns>
         private static string RemoveAndInsert(string providedString, string subString, int index, int length, int count)
         {            
             var bStringBuilder = new StringBuilder(providedString);
